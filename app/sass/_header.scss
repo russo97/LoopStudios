@@ -18,8 +18,8 @@
     @extend
     %flex,
     %flex-jc_spacebetween-ai-center;
-    position: relative;
     max-height: 3.125rem;
+    z-index: 6;
   }
 
   &__logo {
@@ -58,20 +58,57 @@
   }
 
   &__hero {
-    border: solid 3px $white;
+    margin-top: 10rem;
+    @extend %josefinSans;
+    border: solid 2px $white;
+    padding: 1.5rem;
+  }
+  
+  &__hero-text {
+    color: $white;
+    font-weight: 300;
+    text-transform: uppercase;
   }
 
-  &.open &__menu {
-    & > *:nth-child(1) {
-      transform: rotate(45deg);
+  &__overlay {
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    position: fixed;
+    visibility: hidden;
+    background-color: $black;
+    @extend %fadeOut;
+  }
+
+  &__links {
+    z-index: 4;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    position: fixed;
+    visibility: hidden;
+    // background-color: $black;
+  }
+
+  &.open {
+    .header__menu {
+      & > *:nth-child(1) {
+        transform: rotate(45deg);
+      }
+  
+      & > *:nth-child(2) {
+        opacity: 0;
+      }
+  
+      & > *:nth-child(3) {
+        transform: rotate(-45deg);
+      }
     }
 
-    & > *:nth-child(2) {
-      opacity: 0;
-    }
-
-    & > *:nth-child(3) {
-      transform: rotate(-45deg);
+    .header__overlay {
+      @extend %fadeIn;
     }
   }
 }

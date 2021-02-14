@@ -5,22 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
     <link rel="stylesheet" href="./dist/css/styles.min.css" media="all" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:wght@300&display=swap" rel="stylesheet" />
     <title>Frontend Mentor | Loopstudios landing page</title>
   </head>
   <body>
 
     <header class="header">
+      <div class="header__overlay onlyMobile"></div>
       <div class="header__container container">
         <nav class="header__nav">
           <a href="#" class="header__logo">
             <img src="./images/logo.svg" alt="logo" />
           </a>
   
-          <a href="#" id="header__menu" class="header__menu">
+          <a href="#" id="header__menu" class="header__menu onlyMobile">
             <span></span>
             <span></span>
             <span></span>
           </a>
+
+          <div class="header__links">
+            <ul class="header__links-box">
+              <li class="header__links-item">
+                <a href="#">About</a>
+              </li>
+              <li class="header__links-item">
+                <a href="#">Careers</a>
+              </li>
+              <li class="header__links-item">
+                <a href="#">Events</a>
+              </li>
+              <li class="header__links-item">
+                <a href="#">Products</a>
+              </li>
+              <li class="header__links-item">
+                <a href="#">Support</a>
+              </li>
+            </ul>
+          </div>
         </nav>
 
         <div class="header__hero">

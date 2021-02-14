@@ -10,6 +10,14 @@ body {
   max-width: $maxMobileContainerSize;
 }
 
+%alata {
+  font-family: 'Alata', sans-serif;
+}
+
+%josefinSans {
+  font-family: 'Josefin Sans', sans-serif;
+}
+
 %flex {
   display: flex;
 
@@ -26,4 +34,26 @@ body {
     align-items: center;
     justify-content: space-between;
   }
+}
+
+.onlyMobile {
+  @include breakpoint-up(mobile) {
+    display: none;
+  };
+}
+
+.onlyDesktop {
+  @include breakpoint-down(desktop) {
+    display: none;
+  };
+}
+
+%fadeIn {
+  visibility: hidden;
+  animation: fadeIn .4s ease-in-out forwards;
+}
+
+%fadeOut {
+  visibility: hidden;
+  animation: fadeOut .4s ease-in-out forwards;
 }
