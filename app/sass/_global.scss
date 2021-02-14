@@ -37,7 +37,7 @@ body {
 }
 
 .onlyMobile {
-  @include breakpoint-up(mobile) {
+  @include breakpoint-up(desktop) {
     display: none;
   };
 }
@@ -48,12 +48,3 @@ body {
   };
 }
 
-%fadeIn {
-  visibility: hidden;
-  animation: fadeIn .4s ease-in-out forwards;
-}
-
-%fadeOut {
-  visibility: hidden;
-  animation: fadeOut .4s ease-in-out forwards;
-}

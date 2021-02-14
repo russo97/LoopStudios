@@ -22,3 +22,15 @@ $breakpoints-down: (
     @content;
   }
 }
+
+
+
+@mixin fadeIn {
+  visibility: hidden;
+  animation: fadeIn .4s ease-in-out forwards;
+}
+
+@mixin fadeOut {
+  visibility: hidden;
+  animation: fadeOut .4s ease-in-out forwards;
+}
