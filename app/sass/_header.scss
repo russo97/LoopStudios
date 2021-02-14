@@ -1,0 +1,50 @@
+
+.header {
+  position: relative;
+  min-height: $mobileHeaderHeight;
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url('../../images/mobile/image-hero.jpg');
+
+  &__container {
+    @extend
+    %flex,
+    %flex-fd_column,
+    %flex-jc_spacebetween-ai-center;
+  }
+
+  &__nav {
+    @extend
+    %flex,
+    %flex-jc_spacebetween-ai-center;
+    position: relative;
+    max-height: 3.125rem;
+  }
+
+  &__logo {
+    max-width: 48%;
+    width: 15.625rem;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &__menu {
+    width: 1.5rem;
+    height: 1.20rem;
+    // background-color: red;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+
+    & > * {
+      width: 100%;
+      height: 2px;
+      background-color: $white;
+    }
+  }
+}

@@ -1,0 +1,29 @@
+
+body {
+  position: relative;
+  background-color: $white;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+  max-width: $maxMobileContainerSize;
+}
+
+%flex {
+  display: flex;
+
+  &-fd_column {
+    flex-direction: column;
+  }
+
+  &-jc_center-ai_center {
+    align-items: center;
+    justify-content: center;
+  }
+
+  &-jc_spacebetween-ai-center {
+    align-items: center;
+    justify-content: space-between;
+  }
+}
