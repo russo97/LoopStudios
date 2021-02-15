@@ -7,6 +7,15 @@
   background-repeat: no-repeat;
   background-image: url('../../images/mobile/image-hero.jpg');
 
+  @include breakpoint-up (medium) {
+    background-position: center 40%;
+  }
+  
+  @include breakpoint-up (desktop) {
+    background-size: cover;
+    background-image: url('../../images/desktop/image-hero.jpg');
+  }
+
   &__container {
     @extend
     %flex,
@@ -18,14 +27,25 @@
     @extend
     %flex,
     %flex-jc_spacebetween-ai-center;
-    max-height: 3.125rem;
-    position: relative;
     z-index: 6;
+    width: 100%;
+    position: relative;
+    max-height: 3.125rem; 
+
+    @include breakpoint-up (desktop) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
   }
 
   &__logo {
     max-width: 48%;
     width: 15.625rem;
+
+    @include breakpoint-up (desktop) {
+      width: unset;
+      max-width: 10rem;
+    }
 
     img {
       width: 100%;
@@ -59,10 +79,17 @@
   }
 
   &__hero {
+    min-width: 100%;
+    padding: 1.5rem;
     margin-top: 10rem;
     @extend %josefinSans;
     border: solid .125rem $white;
-    padding: 1.5rem;
+
+    @include breakpoint-up (desktop) {
+      max-width: 60%;
+      min-width: unset;
+      align-self: flex-start;
+    }
   }
   
   &__hero-text {
@@ -71,6 +98,15 @@
     word-spacing: unset;
     display: table-caption;
     text-transform: uppercase;
+
+    @include breakpoint-up (mobile) {
+      font-size: 2.8rem;
+    }
+
+    @include breakpoint-up (desktop) {
+      display: block;
+      font-size: 4rem;
+    }
   }
 
   &__overlay {
@@ -94,6 +130,14 @@
     @include breakpoint-down (desktop) {
       @include fadeOut;
     }
+
+    @include breakpoint-up (desktop) {
+      width: unset;
+      height: unset;
+      margin-top: 0;
+      position: relative;
+      min-width: 23.75rem;
+    }
   }
 
   &__links-box {
@@ -101,9 +145,14 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-evenly;
+
+    @include breakpoint-up (desktop) {
+      flex-direction: row;
+    }
   }
 
   &__links-item {
+    position: relative;
     padding: .9375rem 0;
 
     a {
@@ -112,6 +161,38 @@
       font-size: 1.5rem;
       @extend %josefinSans;
       text-transform: uppercase;
+    }
+
+    @include breakpoint-up (desktop) {
+      padding: 0;
+
+      &::after {
+        content: '';
+        width: 40%;
+        height: .125rem;
+        left: 50%;
+        bottom: -.625rem;
+        @include fadeOut;
+        visibility: hidden;
+        position: absolute;
+        background-color: $white;
+        transform: translateX(-50%);
+        transition: all .3s ease-in-out;
+      }
+      
+      a {
+        font-weight: 700;
+        padding: 0 .3125rem;
+        text-transform: unset;
+        font-size: $bodyFontSize;
+      }
+      
+      &:hover {
+        &::after {
+          @include fadeIn;
+          bottom: -.9375rem;
+        }
+      }
     }
   }
 

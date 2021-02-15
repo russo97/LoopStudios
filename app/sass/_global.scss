@@ -8,6 +8,20 @@ body {
   margin: 0 auto;
   padding: 2.5rem 1.5rem;
   max-width: $maxMobileContainerSize;
+
+  @include breakpoint-up (mobile) {
+    // padding: 1.5rem 3rem;
+  }
+
+  @include breakpoint-up (medium) {
+    padding: 2rem 2rem;
+    max-width: 43rem;
+  }
+
+  @include breakpoint-up (desktop) {
+    padding: 3.75rem 2rem;
+    max-width: $maxDesktopContainerSize;
+  }
 }
 
 %alata {
@@ -38,7 +52,7 @@ body {
 
 .onlyMobile {
   @include breakpoint-up(desktop) {
-    display: none;
+    display: none !important;
   };
 }
 
