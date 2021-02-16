@@ -78,6 +78,7 @@ body {
 
 body {
   position: relative;
+  scroll-behavior: smooth;
   background-color: white;
 }
 
@@ -144,6 +145,8 @@ body {
   min-height: 40rem;
   background-size: cover;
   background-repeat: no-repeat;
+  background-blend-mode: darken;
+  background-color: rgba(0, 0, 0, 0.4);
   background-image: url("../../images/mobile/image-hero.jpg");
 }
 
@@ -155,7 +158,6 @@ body {
 
 @media (min-width: 64rem) {
   .header {
-    background-size: cover;
     background-image: url("../../images/desktop/image-hero.jpg");
   }
 }
@@ -246,8 +248,10 @@ body {
 
 @media (min-width: 64rem) {
   .header__hero {
+    padding: 2.5rem;
     max-width: 60%;
     min-width: unset;
+    margin-top: 8.3rem;
     -ms-flex-item-align: start;
         align-self: flex-start;
   }
