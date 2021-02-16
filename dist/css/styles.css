@@ -163,7 +163,7 @@ body {
 }
 
 .header__nav {
-  z-index: 6;
+  z-index: 501;
   width: 100%;
   position: relative;
   max-height: 3.125rem;
@@ -283,6 +283,7 @@ body {
   height: 100%;
   top: 0rem;
   left: 0rem;
+  z-index: 500;
   position: fixed;
   visibility: hidden;
   -webkit-animation: fadeOut .4s ease-in-out forwards;
@@ -392,7 +393,6 @@ body {
 @media (max-width: 63.9375rem) {
   .header.open {
     width: 100%;
-    position: fixed;
   }
   .header.open .header__menu > *:nth-child(1) {
     -webkit-transform: rotate(45deg);
@@ -415,5 +415,32 @@ body {
     -webkit-animation-delay: .2s;
             animation-delay: .2s;
   }
+}
+
+.feature {
+  position: relative;
+}
+
+.feature__container {
+  background-color: white;
+}
+
+.feature__image {
+  width: 100%;
+  height: 200px;
+  position: relative;
+}
+
+.feature__image::after {
+  content: "";
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("../../images/desktop/image-interactive.jpg");
 }
 /*# sourceMappingURL=styles.css.map */

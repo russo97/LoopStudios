@@ -28,7 +28,7 @@
     @extend
     %flex,
     %flex-jc_spacebetween-ai-center;
-    z-index: 6;
+    z-index: 501;
     width: 100%;
     position: relative;
     max-height: 3.125rem; 
@@ -117,6 +117,7 @@
     height: 100%;
     top: 0rem;
     left: 0rem;
+    z-index: 500;
     position: fixed;
     @include fadeOut;
     visibility: hidden;
@@ -202,7 +203,6 @@
   @include breakpoint-down (desktop) {
     &.open {
       width: 100%;
-      position: fixed;
   
       .header__menu {
         & > *:nth-child(1) {
