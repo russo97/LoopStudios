@@ -3,13 +3,23 @@
   position: relative;
 
   &__container {
+    position: relative;
     background-color: $white;
   }
 
   &__image {
     width: 100%;
-    height: 210px;
+    height: 13.125rem;
     position: relative;
+
+    @include breakpoint-up (medium) {
+      height: 17.5rem;
+    }
+
+    @include breakpoint-up (desktop) {
+      max-width: 730px;
+      min-height: 500px;
+    }
 
     &::after {
       content: "";
@@ -18,7 +28,7 @@
       width: 100%;
       height: 100%;
       position: absolute;
-      background-size: cover;
+      background-size: contain;
       background-position: center;
       background-repeat: no-repeat;
       background-image: url('../../images/desktop/image-interactive.jpg');
@@ -27,6 +37,15 @@
 
   &__description {
     padding: 2rem .8rem;
+    
+    @include breakpoint-up (desktop) {
+      right: 0px;
+      bottom: -40px;
+      padding: 5rem;
+      max-width: 520px;
+      position: absolute;
+      background-color: $white;
+    }
 
     &__title {
       color: $black;
@@ -36,15 +55,20 @@
       text-align: center;
       @extend %josefinSans;
       text-transform: uppercase;
+
+      @include breakpoint-up (desktop) {
+        // font-weight: 700;
+        font-size: 2.6rem;
+      }
     }
 
     &__text {
-      color: $darkGray;
       @extend %alata;
       padding: .5rem;
-      font-size: 14px;
+      color: $darkGray;
+      font-size: .875rem;
       text-align: center;
-      word-spacing: 4px;
+      word-spacing: .25rem;
     }
   }
 
