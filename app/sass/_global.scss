@@ -1,5 +1,6 @@
 
 body {
+  height: 5000px;
   position: relative;
   scroll-behavior: smooth;
   background-color: $white;
@@ -10,13 +11,17 @@ body {
   padding: 2.5rem 1.5rem;
   max-width: $maxMobileContainerSize;
 
+  &--middle {
+    margin-top: 4rem;
+  }
+
   @include breakpoint-up (mobile) {
     // padding: 1.5rem 3rem;
   }
 
   @include breakpoint-up (medium) {
-    padding: 2rem 2rem;
     max-width: 43rem;
+    padding: 2.5rem 2rem;
   }
 
   @include breakpoint-up (desktop) {
