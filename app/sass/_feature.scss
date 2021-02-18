@@ -40,11 +40,15 @@
     
     @include breakpoint-up (desktop) {
       right: 0px;
-      bottom: -40px;
+      bottom: -30px;
       padding: 5rem;
       max-width: 520px;
       position: absolute;
       background-color: $white;
+
+      display: flex;
+      align-items: center;
+      flex-direction: column;
     }
 
     &__title {
@@ -69,6 +73,10 @@
       font-size: .875rem;
       text-align: center;
       word-spacing: .25rem;
+
+      @include breakpoint-up (desktop) {
+        max-width: 20rem;
+      }
     }
   }
 
