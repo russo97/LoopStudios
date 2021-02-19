@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAGG,AAAD,qBAAY,CAAC;EACX,UAAU,EAAE,SAAS;CACtB;;AAEA,AAAD,iBAAQ,CAAC;EAEP,WAAW,EAAE,GAAG;EAChB,cAAc,EAAE,SAAS;CAC1B",
+    "sources": [
+        "../../app/sass/creations.scss"
+    ],
+    "names": [],
+    "file": "creations.css"
+}

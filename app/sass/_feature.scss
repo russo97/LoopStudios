@@ -61,7 +61,6 @@
       text-transform: uppercase;
 
       @include breakpoint-up (desktop) {
-        // font-weight: 700;
         font-size: 2.6rem;
       }
     }
@@ -79,7 +78,4 @@
       }
     }
   }
-
-  &__title {}
-
 }
