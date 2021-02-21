@@ -5,9 +5,9 @@
   }
 
   function noScroll () {
-    document.body.style.overflow = header.classList.contains('open')
-      ? "hidden"
-      : "unset";
+    document.body.classList.toggle(
+      'overflow-hidden', header.classList.contains('open')
+    );
   }
 
   const [ header, headerMenu ] = ['header.header', '#header__menu'].map($);
