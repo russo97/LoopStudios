@@ -550,29 +550,93 @@ body {
   height: auto;
 }
 
+@media (min-width: 64rem) {
+  .creations__grid {
+    display: -ms-grid;
+    display: grid;
+    grid-gap: 30px;
+    -ms-grid-columns: (200px)[4];
+        grid-template-columns: repeat(4, 200px);
+  }
+}
+
 .creations__grid__item {
   width: 100%;
   height: 120px;
-  max-width: 40.9375rem;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  border-radius: 4px;
+  max-width: 22.875rem;
   background-size: cover;
-  -webkit-filter: contrast(110%);
-          filter: contrast(110%);
   background-position: center;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+  -webkit-box-shadow: 0 5px 5px -1px rgba(0, 0, 0, 0.6);
+          box-shadow: 0 5px 5px -1px rgba(0, 0, 0, 0.6);
+}
+
+.creations__grid__item::before {
+  z-index: 1;
+  content: '';
+  top: 0px;
+  left: 0px;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  -webkit-backdrop-filter: blur(12px);
+          backdrop-filter: blur(12px);
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .creations__grid__item:not(:last-child) {
   margin-bottom: 1.25rem;
 }
 
-@media (min-width: 25.6875rem) {
+@media (min-width: 48rem) {
   .creations__grid__item:not(:last-child) {
     margin-bottom: 0;
   }
 }
 
+.creations__grid__item:hover::before {
+  opacity: 1;
+}
+
+.creations__grid__item:hover .creations__grid__item__title {
+  font-weight: 700;
+}
+
 @media (min-width: 25.6875rem) {
   .creations__grid__item {
-    height: 255px;
+    height: 120px;
+  }
+}
+
+@media (min-width: 48rem) {
+  .creations__grid__item {
+    height: 120px;
+    max-width: unset;
+  }
+}
+
+@media (min-width: 64rem) {
+  .creations__grid__item {
+    height: 312px;
+  }
+}
+
+@media (min-width: 48rem) {
+  .creations__grid__item:nth-child(2n) {
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+  }
+  .creations__grid__item:nth-child(1 + 2n) {
+    -ms-flex-item-align: end;
+        align-self: flex-end;
   }
 }
 
@@ -581,7 +645,7 @@ body {
   background-image: linear-gradient(to left, transparent, rgba(0, 0, 0, 0.6)), url("../../images/mobile/image-grid.jpg");
 }
 
-@media (min-width: 25.6875rem) {
+@media (min-width: 48rem) {
   .creations__grid__item.grid {
     background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(0, 0, 0, 0.6))), url("../../images/desktop/image-grid.jpg");
     background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.6)), url("../../images/desktop/image-grid.jpg");
@@ -593,7 +657,7 @@ body {
   background-image: linear-gradient(to left, transparent, rgba(0, 0, 0, 0.6)), url("../../images/mobile/image-fisheye.jpg");
 }
 
-@media (min-width: 25.6875rem) {
+@media (min-width: 48rem) {
   .creations__grid__item.fisheye {
     background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(0, 0, 0, 0.6))), url("../../images/desktop/image-fisheye.jpg");
     background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.6)), url("../../images/desktop/image-fisheye.jpg");
@@ -605,7 +669,7 @@ body {
   background-image: linear-gradient(to left, transparent, rgba(0, 0, 0, 0.6)), url("../../images/mobile/image-curiosity.jpg");
 }
 
-@media (min-width: 25.6875rem) {
+@media (min-width: 48rem) {
   .creations__grid__item.curiosity {
     background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(0, 0, 0, 0.6))), url("../../images/desktop/image-curiosity.jpg");
     background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.6)), url("../../images/desktop/image-curiosity.jpg");
@@ -617,7 +681,7 @@ body {
   background-image: linear-gradient(to left, transparent, rgba(0, 0, 0, 0.6)), url("../../images/mobile/image-deep-earth.jpg");
 }
 
-@media (min-width: 25.6875rem) {
+@media (min-width: 48rem) {
   .creations__grid__item.deep-earth {
     background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(0, 0, 0, 0.6))), url("../../images/desktop/image-deep-earth.jpg");
     background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.6)), url("../../images/desktop/image-deep-earth.jpg");
@@ -629,7 +693,7 @@ body {
   background-image: linear-gradient(to left, transparent, rgba(0, 0, 0, 0.6)), url("../../images/mobile/image-from-above.jpg");
 }
 
-@media (min-width: 25.6875rem) {
+@media (min-width: 48rem) {
   .creations__grid__item.from-above {
     background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(0, 0, 0, 0.6))), url("../../images/desktop/image-from-above.jpg");
     background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.6)), url("../../images/desktop/image-from-above.jpg");
@@ -641,7 +705,7 @@ body {
   background-image: linear-gradient(to left, transparent, rgba(0, 0, 0, 0.6)), url("../../images/mobile/image-soccer-team.jpg");
 }
 
-@media (min-width: 25.6875rem) {
+@media (min-width: 48rem) {
   .creations__grid__item.soccer-team {
     background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(0, 0, 0, 0.6))), url("../../images/desktop/image-soccer-team.jpg");
     background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.6)), url("../../images/desktop/image-soccer-team.jpg");
@@ -653,7 +717,7 @@ body {
   background-image: linear-gradient(to left, transparent, rgba(0, 0, 0, 0.6)), url("../../images/mobile/image-night-arcade.jpg");
 }
 
-@media (min-width: 25.6875rem) {
+@media (min-width: 48rem) {
   .creations__grid__item.night-arcade {
     background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(0, 0, 0, 0.6))), url("../../images/desktop/image-night-arcade.jpg");
     background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.6)), url("../../images/desktop/image-night-arcade.jpg");
@@ -665,7 +729,7 @@ body {
   background-image: linear-gradient(to left, transparent, rgba(0, 0, 0, 0.6)), url("../../images/mobile/image-pocket-borealis.jpg");
 }
 
-@media (min-width: 25.6875rem) {
+@media (min-width: 48rem) {
   .creations__grid__item.pocket-borealis {
     background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(0, 0, 0, 0.6))), url("../../images/desktop/image-pocket-borealis.jpg");
     background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.6)), url("../../images/desktop/image-pocket-borealis.jpg");
@@ -673,6 +737,7 @@ body {
 }
 
 .creations__grid__item__title {
+  z-index: 2;
   color: white;
   max-width: 45%;
   font-weight: 100;
@@ -682,5 +747,7 @@ body {
       align-self: flex-end;
   justify-self: flex-start;
   text-transform: uppercase;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
 }
 /*# sourceMappingURL=styles.css.map */

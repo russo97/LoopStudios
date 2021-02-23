@@ -19,25 +19,81 @@
     height: auto;
     @extend %flex, %flex-fd_column, %flex-jc_center-ai_center;
 
+    @include breakpoint-up (desktop) {
+      display: grid;
+      grid-gap: 30px;
+      grid-template-columns: repeat(4, 200px);
+    }
+
     &__item {
+      $this: &;
+
       width: 100%;
       height: 120px;
       @extend %flex;
-      max-width: 40.9375rem;
+      cursor: pointer;
+      overflow: hidden;
+      position: relative;
+      border-radius: 4px;
+      max-width: 22.875rem;
       background-size: cover;
-      filter: contrast(110%);
       background-position: center;
+      transition: all .4s ease-in-out;
+      box-shadow: 0 5px 5px -1px rgba($color: $black, $alpha: .6);
+      
+      &::before {
+        z-index: 1;
+        content: '';
+        top: 0px;
+        left: 0px;
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        backdrop-filter: blur(12px);
+        transition: all .4s ease-in-out;
+        background-color: rgba($color: $white, $alpha: .1);
+      }
 
       &:not(:last-child) {
         margin-bottom: 1.25rem;
 
-        @include breakpoint-up (mobile) {
+        @include breakpoint-up (medium) {
           margin-bottom: 0;
         }
       }
-      
+
+      &:hover {
+        &::before {
+          opacity: 1;
+        }
+
+        #{$this}__title {
+          font-weight: 700;
+        }
+      }
+
       @include breakpoint-up (mobile) {
-        height: 255px;
+        height: 120px;
+      }
+      
+      @include breakpoint-up (medium) {
+        height: 120px;
+        max-width: unset;
+      }
+
+      @include breakpoint-up (desktop) {
+        height: 312px;
+      }
+
+      @include breakpoint-up (medium) {
+        &:nth-child(2n) {
+          align-self: flex-start;
+        }
+
+        &:nth-child(1 + 2n) {
+          align-self: flex-end;
+        }
       }
 
       $itemList: (
@@ -61,7 +117,7 @@
             ),
             url('../../images/mobile/image-#{$itemClass}.jpg');
 
-          @include breakpoint-up (mobile) {
+          @include breakpoint-up (medium) {
             background-image:
               linear-gradient(
                 to bottom,
@@ -74,6 +130,7 @@
       }
 
       &__title {
+        z-index: 2;
         color: $white;
         max-width: 45%;
         font-weight: 100;
@@ -83,6 +140,7 @@
         align-self: flex-end;
         justify-self: flex-start;
         text-transform: uppercase;
+        transition: all .2s ease-in-out;
       }
     }
   }
