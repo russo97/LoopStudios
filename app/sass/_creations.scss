@@ -4,14 +4,28 @@
   &__container {
   }
 
+  &__header {
+    padding: 20px 0;
+    margin-bottom: 30px;
+    @extend %flex, %flex-jc_center-ai_center;
+
+    @include breakpoint-up (desktop) {
+      justify-content: space-between;
+    }
+  }
+
   &__title {
     color: $black;
     font-weight: 400;
     font-size: 1.9rem;
+    @extend %josefinSans;
     justify-content: center;
-    margin-bottom: 3.125rem;
     text-transform: uppercase;
-    @extend %josefinSans, %flex;
+    
+    @include breakpoint-up (desktop) {
+      font-size: 2.1rem;
+      font-weight: 500;
+    }
   }
 
   &__grid {
@@ -22,7 +36,7 @@
     @include breakpoint-up (desktop) {
       display: grid;
       grid-gap: 30px;
-      grid-template-columns: repeat(4, 200px);
+      grid-template-columns: repeat(4, minmax(200px, 1fr));
     }
 
     &__item {
@@ -58,7 +72,7 @@
       &:not(:last-child) {
         margin-bottom: 1.25rem;
 
-        @include breakpoint-up (medium) {
+        @include breakpoint-up (desktop) {
           margin-bottom: 0;
         }
       }
@@ -79,19 +93,20 @@
       
       @include breakpoint-up (medium) {
         height: 120px;
-        max-width: unset;
+        max-width: 480px;
       }
 
       @include breakpoint-up (desktop) {
-        height: 312px;
+        height: 332px;
+        background-position: top center;
       }
 
       @include breakpoint-up (medium) {
-        &:nth-child(2n) {
+        &:nth-child(odd) {
           align-self: flex-start;
         }
 
-        &:nth-child(1 + 2n) {
+        &:nth-child(even) {
           align-self: flex-end;
         }
       }
@@ -117,7 +132,7 @@
             ),
             url('../../images/mobile/image-#{$itemClass}.jpg');
 
-          @include breakpoint-up (medium) {
+          @include breakpoint-up (desktop) {
             background-image:
               linear-gradient(
                 to bottom,
