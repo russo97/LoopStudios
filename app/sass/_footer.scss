@@ -1,0 +1,66 @@
+
+.footer {
+  margin-top: 20px;
+  background-color: $black;
+
+  &__logo {
+    width: 175px;
+    margin-bottom: 20px;
+    
+    @include breakpoint-up (desktop) {
+      margin-left: 14px;
+      margin-bottom: 30px;
+      align-self: flex-start;
+    }
+  }
+
+  &__container {
+    @extend
+      %flex,
+      %flex-fd_column,
+      %flex-jc_center-ai_center;
+    color: $white;
+
+    @include breakpoint-up (desktop) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    &__group {
+      @extend
+        %flex,
+        %flex-fd_column;
+      align-items: center;
+      justify-content: space-between;
+
+      @include breakpoint-down (desktop) {
+        &:nth-child(1) {
+          margin-bottom: 30px;
+        }
+      }
+    }
+  }
+
+  &__links {
+    &__box {
+      @extend
+        %flex,
+        %flex-fd_column;
+      align-items: center;
+
+      @include breakpoint-up (desktop) {
+        flex-direction: row;
+      }
+    }
+
+    &__item {
+      margin: 14px 0;
+      @extend %alata;
+      font-size: 16px;
+
+      @include breakpoint-up (desktop) {
+        margin: 0 14px;
+      }
+    }
+  }
+}
