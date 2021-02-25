@@ -83,8 +83,10 @@ body {
   background-color: white;
 }
 
-.overflow-hidden {
-  overflow: hidden;
+@media (max-width: 63.9375rem) {
+  .overflow-hidden {
+    overflow: hidden;
+  }
 }
 
 button,
