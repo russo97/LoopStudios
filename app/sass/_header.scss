@@ -19,15 +19,15 @@
 
   &__container {
     @extend
-    %flex,
-    %flex-fd_column,
-    %flex-jc_spacebetween-ai-center;
+      %flex,
+      %flex-fd_column,
+      %flex-jc_spacebetween-ai-center;
   }
 
   &__nav {
     @extend
-    %flex,
-    %flex-jc_spacebetween-ai-center;
+      %flex,
+      %flex-jc_spacebetween-ai-center;
     width: 100%;
     z-index: 501;
     position: relative;
