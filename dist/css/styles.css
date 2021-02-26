@@ -169,7 +169,7 @@ button::before,
 }
 
 button,
-.button, .feature__description__text, .footer__links__item {
+.button, .feature__description__text, .footer__links__item, .footer__copy {
   font-family: 'Alata', sans-serif;
 }
 
@@ -177,7 +177,7 @@ button,
   font-family: 'Josefin Sans', sans-serif;
 }
 
-.header__container, .header__nav, .creations__header, .creations__grid, .creations__grid__item, .creations__footer, .footer__container, .footer__container__group, .footer__links__box {
+.header__container, .header__nav, .creations__header, .creations__grid, .creations__grid__item, .creations__footer, .footer__container, .footer__container__group, .footer__links__box, .footer__social {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -190,7 +190,7 @@ button,
           flex-direction: column;
 }
 
-.creations__header, .creations__grid, .creations__footer, .footer__container {
+.creations__header, .creations__grid, .creations__footer, .footer__container, .footer__social {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -834,19 +834,18 @@ button,
 }
 
 .footer {
-  margin-top: 20px;
+  margin-top: 1.25rem;
   background-color: black;
 }
 
 .footer__logo {
-  width: 175px;
-  margin-bottom: 20px;
+  width: 12.5rem;
+  margin: 0 0 1.25rem;
 }
 
 @media (min-width: 64rem) {
   .footer__logo {
-    margin-left: 14px;
-    margin-bottom: 30px;
+    margin-bottom: 1.875rem;
     -ms-flex-item-align: start;
         align-self: flex-start;
   }
@@ -879,7 +878,7 @@ button,
 
 @media (max-width: 63.9375rem) {
   .footer__container__group:nth-child(1) {
-    margin-bottom: 30px;
+    margin-bottom: 1.875rem;
   }
 }
 
@@ -899,13 +898,42 @@ button,
 }
 
 .footer__links__item {
-  margin: 14px 0;
-  font-size: 16px;
+  font-size: 1rem;
+  margin: .875rem 0;
 }
 
 @media (min-width: 64rem) {
   .footer__links__item {
-    margin: 0 14px;
+    margin: 0 .875rem;
   }
+  .footer__links__item:first-child {
+    margin-left: 0rem;
+  }
+}
+
+.footer__social {
+  margin-bottom: 1.875rem;
+}
+
+@media (min-width: 64rem) {
+  .footer__social {
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+  }
+}
+
+.footer__social__item {
+  margin: 0 .9375rem;
+}
+
+@media (min-width: 64rem) {
+  .footer__social__item:last-child {
+    margin-right: 1.875rem;
+  }
+}
+
+.footer__copy {
+  font-size: 1rem;
+  color: #8c8c8c;
 }
 /*# sourceMappingURL=styles.css.map */
