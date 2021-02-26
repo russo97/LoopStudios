@@ -17,14 +17,14 @@
     }
 
     @include breakpoint-up (desktop) {
-      max-width: 730px;
-      min-height: 500px;
+      max-width: 45.625rem;
+      min-height: 31.25rem;
     }
 
     &::after {
       content: "";
-      top: 0px;
-      left: 0px;
+      top: 0rem;
+      left: 0rem;
       width: 100%;
       height: 100%;
       position: absolute;
@@ -39,10 +39,10 @@
     padding: 2rem .8rem;
     
     @include breakpoint-up (desktop) {
-      right: 0px;
-      bottom: -30px;
+      right: 0rem;
+      bottom: -1.875rem;
       padding: 5rem;
-      max-width: 520px;
+      max-width: 32.5rem;
       position: absolute;
       background-color: $white;
 
