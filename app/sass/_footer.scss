@@ -59,6 +59,7 @@
 
       @include breakpoint-up (desktop) {
         margin: 0 .875rem;
+        @include hover-effect;
 
         &:first-child {
           margin-left: 0rem;
@@ -81,6 +82,8 @@
       margin: 0 .9375rem;
 
       @include breakpoint-up (desktop) {
+        @include hover-effect;
+
         &:last-child {
           margin-right: 1.875rem;
         }

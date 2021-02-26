@@ -108,6 +108,28 @@ button,
   }
 }
 
+@mixin hover-effect {
+  position: relative;
+
+  &::after {
+    content: '';
+    width: 50%;
+    height: .125rem;
+    left: 50%;
+    bottom: -.4rem;
+    @include fadeOut;
+    position: absolute;
+    background-color: $white;
+    transform: translateX(-50%);
+    transition: all .3s ease-in-out;
+  }
+  
+  &:hover::after {
+    bottom: -.7rem;
+    @include fadeIn;
+  }
+}
+
 .onlyMobile {
   @include breakpoint-up(desktop) {
     display: none !important;

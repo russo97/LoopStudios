@@ -169,33 +169,13 @@
 
     @include breakpoint-up (desktop) {
       padding: 0;
-
-      &::after {
-        content: '';
-        width: 40%;
-        height: .125rem;
-        left: 50%;
-        bottom: -.625rem;
-        @include fadeOut;
-        visibility: hidden;
-        position: absolute;
-        background-color: $white;
-        transform: translateX(-50%);
-        transition: all .3s ease-in-out;
-      }
+      @include hover-effect;
       
       a {
         font-weight: 700;
         padding: 0 .3125rem;
         text-transform: unset;
         font-size: $bodyFontSize;
-      }
-      
-      &:hover {
-        &::after {
-          @include fadeIn;
-          bottom: -.9375rem;
-        }
       }
     }
   }
