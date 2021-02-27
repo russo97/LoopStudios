@@ -47,6 +47,11 @@
         %flex-fd_column;
       align-items: center;
 
+      @include landscape {
+        margin: 2rem 0;
+        flex-direction: row;
+      }
+
       @include breakpoint-up (desktop) {
         flex-direction: row;
       }
@@ -56,6 +61,10 @@
       @extend %alata;
       font-size: 1rem;
       margin: .875rem 0;
+
+      @include landscape {
+        margin: 0 .875rem;
+      }
 
       @include breakpoint-up (desktop) {
         margin: 0 .875rem;
@@ -85,7 +94,7 @@
         @include hover-effect;
 
         &:last-child {
-          margin-right: 1.875rem;
+          margin-right: .1875rem;
         }
       }
     }

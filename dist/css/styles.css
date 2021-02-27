@@ -897,6 +897,16 @@ button,
           align-items: center;
 }
 
+@media (orientation: landscape) {
+  .footer__links__box {
+    margin: 2rem 0;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
 @media (min-width: 64rem) {
   .footer__links__box {
     -webkit-box-orient: horizontal;
@@ -909,6 +919,12 @@ button,
 .footer__links__item {
   font-size: 1rem;
   margin: .875rem 0;
+}
+
+@media (orientation: landscape) {
+  .footer__links__item {
+    margin: 0 .875rem;
+  }
 }
 
 @media (min-width: 64rem) {
@@ -985,7 +1001,7 @@ button,
             animation: fadeIn .4s ease-in-out forwards;
   }
   .footer__social__item:last-child {
-    margin-right: 1.875rem;
+    margin-right: .1875rem;
   }
 }
 
