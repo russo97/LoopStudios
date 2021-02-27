@@ -34,3 +34,10 @@ $breakpoints-down: (
   visibility: hidden;
   animation: fadeOut .4s ease-in-out forwards;
 }
+
+
+@mixin landscape {
+  @media (orientation: landscape) {
+    @content;
+  }
+}

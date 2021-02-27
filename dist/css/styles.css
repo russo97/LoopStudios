@@ -414,6 +414,15 @@ button,
           justify-content: space-evenly;
 }
 
+@media (orientation: landscape) {
+  .header__links-box {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+  }
+}
+
 @media (min-width: 64rem) {
   .header__links-box {
     -webkit-box-orient: horizontal;

@@ -150,6 +150,10 @@
     align-items: flex-start;
     justify-content: space-evenly;
 
+    @include landscape {
+      flex-flow: row wrap;
+    }
+
     @include breakpoint-up (desktop) {
       flex-direction: row;
     }
